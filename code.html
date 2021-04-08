@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>1 Задание</title>
+
+</head>
+<body>
+
+<!-- <input type="input" id="input" >
+<input type="input" id="input1" >
+<input type="button" size="8" class="btn">
+ -->
+<!-- 
+// let key = '987898983133313195559595959595';
+
+// let arr = text2Binary(key);
+
+// console.log(arr);
+
+// let l = arr.length;
+// let s = [];
+
+// for (let i=0; i<=255; i++){
+//   s[i] = i;
+// }
+
+// function text2Binary(string) {
+//     return string.split('').map(function (char) {
+//         return char.charCodeAt(0).toString(2);
+//     }).join(' ');
+// }
+
+
+// let j = 0;
+// for (let i=0; i<=255; i++){
+//   j = (j + s[i] + +arr[i % l]) % 256;
+//   let glass = s[i];
+//   s[i] = s[j];
+//   s[j] = glass;
+//   // console.log(s[i], "de");
+//   // console.log(s[j], "ff");
+// }
+// console.log(s);
+
+// function dec() {
+//   let i = 0;
+//   let j = 0;
+//   let C = [];
+//   for (let z = 0; z <= 255; z++) {
+
+//   i = ( i + 1 ) % 256;
+//   j = ( j + S[i] ) % 256;
+  
+//   let glass = s[i];
+//   s[i] = s[j];
+//   s[j] = glass;
+  
+//   let t = ( S[i] + S[j] ) % 256;
+//   let K = S[t];
+//   console.log(K);
+//   K = text2Binary(K);
+
+// }
+
+// }
+
+
+// while Цикл генерации:
+//     i := ( i + 1 ) mod 256
+//     j := ( j + S[i] ) mod 256
+//     поменять местами S[i] и S[j]
+//     t := ( S[i] + S[j] ) mod 256
+//     K := S[t]
+//     сгенерировано псевдослучайное слово K 
+//     (для n = 8 будет сгенерирован один байт)
+// endwhile
+ -->
+
+
+<!-- <style>
+    /* ТЕКСТ */
+  .tn-elem__2993021771617383351713{
+    display:none;
+  }
+  .tn-elem__2993021771617383371226{
+    display:none;
+ }
+ .tn-elem__2993021771617383372971{
+    display:none;
+ }
+/* КНОПКИ */
+  .tn-elem__2993021771617383323126{
+    display:none;
+  }
+  .tn-elem__2993021771617383326651{
+    display:none;
+  }
+  .tn-elem__2993021771617383327596{
+    display:none;
+  }
+</style> -->
+
+<div class="n1">Вебинар в пн</div>
+<div class="n2">Вебинар в ср</div>
+<div class="n3">Вебинар в пт</div>
+
+<style>
+  .n1{
+    display: none;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(124, 229, 255);
+    margin: 20px;
+  }
+  .n2{
+    display: none;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(250, 121, 117);
+    margin: 20px;
+  }
+  .n3{
+    display: none;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(50, 202, 50);
+    margin: 20px;
+  }
+</style>
+
+<script type="text/javascript">
+
+// var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+// var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", 
+//             "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+             
+// var myDate = new Date();
+// var fullDate = "Сегодня: " + myDate.getDate() + " " + months[myDate.getMonth()] + 
+//                 " " + myDate.getFullYear() + ", " + days[myDate.getDay()];
+// document.write(fullDate); // Сегодня: 18 Август 2015, Вторник
+
+// const text1 = document.querySelector('.tn-elem__2993021771617383351713');
+// const text2 = document.querySelector('.tn-elem__2993021771617383371226');
+// const text3 = document.querySelector('.tn-elem__2993021771617383372971');
+
+// const shape1 = document.querySelector('.tn-elem__2993021771617383323126');
+// const shape2 = document.querySelector('.tn-elem__2993021771617383326651');
+// const shape3 = document.querySelector('.tn-elem__2993021771617383327596');
+
+
+
+
+
+
+
+
+const shape1 = document.querySelector('.n1');
+const shape2 = document.querySelector('.n2');
+const shape3 = document.querySelector('.n3');
+
+// var month=new Array("ЯНВАРЯ","ФЕВРАЛЯ","МАРТА","АПРЕЛЯ","МАЯ","ИЮНЯ",
+// "ИЮЛЯ","АВГУСТА","СЕНТЯБРЯ","ОКТЯБРЯ","НОЯБРЯ","ДЕКАБРЯ");
+
+day = new Date(); days = day.getDate(); number = day.getDay(); hour = day.getHours(); minute = day.getMinutes();
+
+if (number == 0) { shape1.style.display = "block";  }
+else if (number == 1 && hour>=0 && hour<19) { shape2.style.display = "block";  }
+else if (number == 1 && hour>=19 && hour<=23) { shape2.style.display = "block";  }
+else if (number == 2) { shape2.style.display = "block";  }
+else if (number == 3 && hour>=0 && hour<19) { shape2.style.display = "block";  }
+else if (number == 3 && hour>=19 && hour<=23) { shape3.style.display = "block";  }
+else if (number == 4 ) { shape3.style.display = "block";  }
+else if (number === 5 && hour>=0 && hour<19) { shape3.style.display = "block";  }
+else if (number == 5 && hour>=19 && hour<=23) { shape1.style.display = "block";  }
+else if (number == 6 ) { shape1.style.display = "block";  }
+else { shape1.style.display = "block"; }
+
+// else{ text1.style.display = "block"; shape1.style.display = "flex"; }
+console.log(day.getDay(), number, hour);
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -82,22 +82,14 @@ function createList(){
     for (let j = 0; j < n; j++) {
       let id0 = 100*i + '' + j;
       var a = +document.getElementById(id0).value;
-      if(document.getElementById(id0).value > 0 ){
+      if(document.getElementById(id0).value > 0 && i<j){
         sum = sum + 1;
-      }
-    }
-  }
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      let id0 = 100*i + '' + j;
-      var a = +document.getElementById(id0).value;
-      if(document.getElementById(id0).value > 0 ){
-        document.getElementById('matrix1').innerHTML += [[i+1],[j+1]] + '<br>';
+        document.getElementById('matrix1').innerHTML += "(" + [[i+1],[j+1]] + ")" + '<br>';
       }
     }
   }
   if(sum != 0){
-    document.getElementById('matrix').innerHTML = "есть " + sum/2 + " ребра(-ер)";
+    document.getElementById('matrix').innerHTML = "есть " + sum + " ребра(-ер)";
   } else {
     document.getElementById('matrix').innerHTML = "нет ребер";
   }
@@ -126,11 +118,12 @@ function createList(){
       <div class="modal-body">
         <p>В списке рёбер в каждой строке записываются две смежные вершины и вес соединяющего их ребра (для взвешенного графа).</p>
         <p>Количество строк в списке ребер всегда должно быть равно величине, получающейся в результате сложения ориентированных рёбер с удвоенным количеством неориентированных рёбер.</p>
-        <p><b>Пример. </b> Простой неориентированный граф</p>
+        <p><b>Пример. </b> Неориентированный граф</p>
         <img src="img/graphteory24.jpg" alt="">
         <p>Матрица смежности данного графа:</p>
         <img src="img/C.png" alt="">
-
+        <p>Ребра:</p>
+        <img src="img/С1.png" alt="">
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
