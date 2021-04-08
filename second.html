@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>2 Задание</title>
+  </head>
+  <body>
+
+<nav class="navbar justify-content-center bg-dark" >
+<ul class="nav nav-pills justify-content-center ">
+  <li class="nav-item">
+    <a class="nav-link " href="index.html">Задание A</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="second.html">Задание B</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="third.html">Задание C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="fourth.html">Задание D</a>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      1 Вариант
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="custom1.html">Задание E</a></li>
+      <li><a class="dropdown-item" href="custom2.html">Задание F</a></li>
+      <li><a class="dropdown-item" href="custom3.html">Задание L</a></li>
+    </ul>
+  </li>
+</ul>
+</nav>
+
+
+
+<script>
+function createTable(){
+  let table = document.querySelector('#table2');
+  const n = document.getElementById('size').value;
+  for (let i = 0; i < n; i++) {
+    let tr = document.createElement('tr');
+    for (let j = 0; j < n; j++) {
+      let td = document.createElement('td');
+      var input1 = document.createElement('input');
+      input1.setAttribute('class', 'input');
+      let id = 100*i + '' + j ;
+      input1.setAttribute('id', id);
+      input1.setAttribute("type",'number');
+      input1.setAttribute("min", 0);
+      input1.setAttribute("max", 1);
+      input1.value = 0;
+      td.setAttribute('class', 'td');
+      td.appendChild(input1);
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+}
+
+function createList(){
+  const n = document.getElementById('size').value;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      let id0 = 100*i + '' + j;
+      // let id0 = 10*i + '' + j + "0";
+      var a = +document.getElementById(id0).value;
+      if(i == j && document.getElementById(id0).value > 0){
+        sum = sum + 1;
+      }
+      // console.log(sum);
+    }
+  }
+    if(sum != 0){
+      document.getElementById('matrix').innerHTML = "есть " + sum + " петель(ли)";
+    } else {
+      document.getElementById('matrix').innerHTML = "нет петель(и)";
+    }
+
+}
+</script>
+
+
+
+<div class="padding">
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal">Теория + пример</button>
+  <p><b>Задание B. </b>По заданной матрице смежности неориентированного графа определите, содержит ли он петли.</p>
+  <input type="number" class="input btn btn-sm" id="size" placeholder="n" min="1"> 
+  <input type="button" class="btn btn-outline-dark btn-sm" value="Создать матрицу" onclick="createTable()" >
+  <table id="table2" ></table>
+  <input type="button" class="btn btn-outline-dark btn-sm" value="Ответ" onclick="createList()" >
+  <div id="matrix"></div>
+</div>
+
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Петли неориентированного графа</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Петля в графе — ребро, инцидентное одной и той же вершине. В некоторых учебниках граф по определению не может иметь петель. Граф без петель — это простой граф. Встречается и другая терминология. Граф может иметь петли. Если же имеются петли, то это — псевдограф. Обычно у петли нет ориентации. Однако в ориентированном графе для отличия от смешанного графа петлям придают ориентацию.</p>
+        <p><b>Пример. </b>Граф, содержащий петлю при вершине 1</p>
+        <img src="img/loop.png" alt="">
+        <p>Матрица смежности данного графа:</p>
+        <img src="img/A.png" alt="">
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
